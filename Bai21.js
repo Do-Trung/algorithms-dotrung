@@ -3,6 +3,19 @@
 // Viết bằng 2 cách, đệ qui và không dùng đệ qui
 
 //cách 1:
-function calSalary(salary, n){
-    
+function calSalaryC1(salary, n){
+    if(n == 1 && n >= 0){
+        return salary
+    }
+    salary = salary + salary* 0.1
+    return calSalaryC1(salary, n-1)
 }
+
+//cách 2:
+function calSalaryC2(salary, n){
+    for(let i = 1; i < n; i++){
+        salary = salary *0.1 +salary
+    }
+    return salary;
+}
+console.log(calSalaryC2(3000,4))
