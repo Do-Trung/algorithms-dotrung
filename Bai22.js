@@ -8,6 +8,9 @@ function calMonthC1(money, rate){
     return moneyMonth;
 }
 //C2
-function calMonthC2(money, rate){
-    
+function calMonthC2(money, rate,n =0){
+    if (money + money * (rate / 100) * n == money * 2) {
+        return n;
+      }
+      return calMonthC2(money, rate, n + 1);
 }
