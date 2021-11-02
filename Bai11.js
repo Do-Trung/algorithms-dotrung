@@ -12,13 +12,13 @@ const Product = [
 //bài 11: Hãy viết function sortByPrice(listProduct) 
 //trả về danh sách product sắp xếp theo giá từ thấp đến cao. Làm theo thuật toán buble.
 function sortByPrice(listProduct){
-    const n = listProduct.length;
-    for( let i = 0; i < n; i++){
-        for( let j = i + 1; j < n; j++){
+    const arrayLength = listProduct.length;
+    for( let i = 0; i < arrayLength; i++){
+        for( let j = i + 1; j < arrayLength; j++){
             if(listProduct[i].price > listProduct[j].price){
-               var x = listProduct[i];
+               var assignValue = listProduct[i];
                listProduct[i] = listProduct[j];
-               listProduct[j] = x;
+               listProduct[j] = assignValue;
             }
         }
     }

@@ -12,9 +12,16 @@ const Product = [
 //bài 15: "Hãy viết function minByPrice(listProduct) 
 //trả về  product có giá nhỏ nhất"
 function minByPrice(listProduct) {
-    min = Math.min.apply(null, Product.map(function(item) {
-        return item.price;
-    }))
-    return min;
+    const arrayLength = listProduct.length;
+    let minPriceByProduct = {};
+    for(let i = 0; i < arrayLength; i++){
+        for(let j = i+1; j<arrayLength; j++){
+            if(listProduct[j].price < listProduct[i].price){
+                minPriceByProduct = listProduct[j];
+                i = j;
+            }
+        }
+    }
+    return minPriceByProduct;
 }
 console.log(minByPrice(Product))

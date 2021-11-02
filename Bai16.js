@@ -9,12 +9,15 @@ const Product = [
     { name: "Monitor", price: 120, quality: 28, categoryId: 2 },
     { name: "Case", price: 120, quality: 28, categoryId: 5 },
   ];
-//bài 15: "Hãy viết function minByPrice(listProduct) 
-//trả về  product có giá nhỏ nhất"
+//bài 16: "Hãy viết function maxByPrice(listProduct) 
+//trả về  product có giá lớn nhất"
 function maxByPrice(listProduct) {
-    max = Math.max.apply(null, Product.map(function(item) {
-        return item.price;
-    }))
+    let max = listProduct[0];
+    for(let i = 1; i < listProduct.length; i++){
+        if(listProduct[i].price > max.price){
+            max = listProduct[i];
+        }
+    }
     return max;
 }
 console.log(maxByPrice(Product))
