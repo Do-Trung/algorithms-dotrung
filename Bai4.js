@@ -12,13 +12,14 @@ const Product = [
 //bài 4: Hãy viết function findProduct(listProduct, nameProduct) 
 //trả về product có tên = nameProduct truyền vào.
 function findProduct(listProduct, nameProducts) {
-    const nameProduct = products.forEach(e => {
-        if(e.name == nameProducts){
-            console.log(e)
+    const arrayLength = listProduct.length;
+    for(let i = 0; i < arrayLength; i++){
+        if(listProduct[i].name == nameProducts){
+            return listProduct[i];
         }
-    });
-    return nameProduct;
+    }
 }
+console.log(findProduct(Product,"RAM"))
 
 
 
