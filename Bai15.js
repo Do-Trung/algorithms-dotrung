@@ -13,13 +13,10 @@ const Product = [
 //trả về  product có giá nhỏ nhất"
 function minByPrice(listProduct) {
     const arrayLength = listProduct.length;
-    let minPriceByProduct = {};
-    for(let i = 0; i < arrayLength; i++){
-        for(let j = i+1; j<arrayLength; j++){
-            if(listProduct[j].price < listProduct[i].price){
-                minPriceByProduct = listProduct[j];
-                i = j;
-            }
+    let minPriceByProduct = listProduct[0];
+    for(let i = 1; i < arrayLength; i++){
+        if(listProduct[i].price < minPriceByProduct.price){
+            minPriceByProduct = listProduct[i];
         }
     }
     return minPriceByProduct;

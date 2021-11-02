@@ -19,5 +19,17 @@ const Category = [
 //trả về danh sách product sắp xếp theo category name theo thứ tự abc
 //Làm theo thuật toán của bài 12.
 function sortByCategoryName(listProduct, listCategory) {
-  return listProduct;
+  const mergeArray = [];
+  const listProductLength = listProduct.length;
+  const listCategoryLength = listCategory.length;
+  listCategory.sort((a,b) => a.name.localeCompare(b.name))
+  for(let i = 0; i < listCategoryLength; i++){
+    for(let j =0; j< listProductLength; j++){
+      if(listCategory[i].id == listProduct[j].categoryId){
+        mergeArray.push(listProduct[j])
+      }
+    }
+  }
+  return mergeArray;
 }
+console.log(sortByCategoryName(Product,Category))

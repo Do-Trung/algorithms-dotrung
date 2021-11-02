@@ -18,16 +18,16 @@ const Product = [
     { id: 4, name: "Acsesory" },
   ];
   function mapProductByCategory(listProduct, listCategory){
-      const array = Product.concat(Category)
-      const listProductCategory = array.forEach(e => {
-          if(e.categoryId = e.id){
-              return [
-                  {id: e.categoryId,
-                   categoryName: e.
-                }
-              ]
+      const listProductLength = listProduct.length;
+      const listCategoryLength = listCategory.length;
+      for(let i = 0; i<listProductLength; i++){
+        for(let j = 0; j < listCategoryLength; j++){
+          if(listProduct[i].categoryId == listCategory[j].id){
+            listProduct[i].categoryName = listCategory[j].name
           }
-      })
-      return listProductCategory
-  }
-  console.log(mapProductByCategory(Product, Category))
+        }
+      }
+      return listProduct
+
+    }
+  console.log(mapProductByCategory(Product, Category));

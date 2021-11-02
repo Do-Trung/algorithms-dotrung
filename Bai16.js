@@ -12,12 +12,12 @@ const Product = [
 //bài 16: "Hãy viết function maxByPrice(listProduct) 
 //trả về  product có giá lớn nhất"
 function maxByPrice(listProduct) {
-    let max = listProduct[0];
+    let maxPriceByProduct = listProduct[0];
     for(let i = 1; i < listProduct.length; i++){
-        if(listProduct[i].price > max.price){
-            max = listProduct[i];
+        if(listProduct[i].price > maxPriceByProduct.price){
+            maxPriceByProduct = listProduct[i];
         }
     }
-    return max;
+    return maxPriceByProduct;
 }
 console.log(maxByPrice(Product))
