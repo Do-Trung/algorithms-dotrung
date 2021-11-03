@@ -4,18 +4,17 @@
 
 //cách 1:
 function calSalaryC1(salary, n){
-    if(n == 1 && n >= 0){
-        return salary
+    if(n <= 1){
+        return salary;
     }
-    salary = salary + salary* 0.1
-    return calSalaryC1(salary, n-1)
+    return calSalaryC1(salary, n-1) + 0.1 * calSalaryC1(salary, n-1)
 }
 
-//cách 2:
+//cách 2: cách thường
 function calSalaryC2(salary, n){
     for(let i = 1; i < n; i++){
         salary = salary *0.1 +salary
     }
     return salary;
 }
-console.log(calSalaryC2(3000,4))
+console.log(calSalaryC2(2000, 1))

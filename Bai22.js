@@ -3,14 +3,11 @@
 //viết bằng 2 cách, đệ qui và không dùng đệ qui
 
 //C1
-function calMonthC1(money, rate){
-    const moneyMonth = Math.round(money / ( money * (rate /100)));  
-    return moneyMonth;
+function calMonthC1Dequy(money, rate){
+    
 }
 //C2
-function calMonthC2(money, rate,n =0){
-    if (money + money * (rate / 100) * n == money * 2) {
-        return n;
-      }
-      return calMonthC2(money, rate, n + 1);
+function calMonthC2(money, rate){
+    const moneyMonth = Math.round(money / ( money * (rate /100)));  
+    return moneyMonth;
 }
